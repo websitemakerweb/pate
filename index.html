@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bekereja Jelgavā</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #bad9b6;
+      color: #3B4953;
+    }
+
+    /* HERO SLIDER – bez redzama fona */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.15);
+      transition: opacity 1s ease, transform 5s ease;
+    }
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      background: transparent;
+      padding: 24px 40px;
+      border-radius: 16px;
+      text-align: center;
+      color: white;
+    }
+    .hero-text h1 { font-size: 44px; margin-bottom: 10px; }
+
+    section { padding: 80px 8%; }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #3B4953;
+    }
+
+    /* GALERIJA – 6 bildes vienādos izmēros */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    /* DARBA LAIKS – centrēts horizontāls bloks */
+    .hours {
+      width: 80%;
+      margin: 0 auto;
+      background: #d3ebd0;
+      padding: 40px 0;
+      border-radius: 24px;
+      text-align: center;
+      font-size: 18px;
+      color: #3B4953;
+    }
+
+    /* KARTE – pilnā platumā */
+    .map-section { padding: 0; }
+    iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    /* KONTAKTI */
+    .contact {
+      width: 80%;
+      margin: 0 auto;
+      background: #d3ebd0;
+      padding: 50px 0;
+      border-radius: 24px;
+      text-align: center;
+      font-size: 18px;
+      color: #3B4953;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 900px) {
+      .gallery { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="slide active" style="background-image:url('https://tasteoffrancemag.com/wp-content/uploads/2021/06/bread-1284438_1280.jpg');"></div>
+    <div class="slide" style="background-image:url('https://myloveofbaking.com/wp-content/uploads/2019/10/IMG_3766-1-e1592192762263-1024x847.jpg');"></div>
+    <div class="slide" style="background-image:url('https://www.southernliving.com/thmb/Epg-SpC5EQdR_h1p3rzCL7fn2VM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Ham_and_Cheese_Croissants_007-9e8ada1047b646d881dab06a12de9a46.jpg');"></div>
+
+    <div class="hero-text">
+      <h1>Pâte Bakery</h1>
+      <p> BEĶEREJA </p>
+    </div>
+  </div>
+
+  <!-- GALERIJA -->
+  <section>
+    <h2>Galerija</h2>
+    <div class="gallery">
+      <img src="https://sourdoughjesha.com/wp-content/uploads/2024/12/Strawberry-sourdough-croissants.jpg" />
+      <img src="https://instagram.frix8-1.fna.fbcdn.net/v/t51.75761-15/491415807_17929130271021359_864530182348115617_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzYwOTc4MTA3NzI4NTU2NTU1Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk5NHgxMjQyLnNkci5DMyJ9&_nc_ohc=i9Pe7fWxDosQ7kNvwEw462b&_nc_oc=Adlv_ad8G4l-zUOxf-K2m5o2WgdI_zDsqOdZJpsz3uRe8n43i8eH5-BfdKA0edHJndw&_nc_ad=z-m&_nc_cid=2015&_nc_zt=23&_nc_ht=instagram.frix8-1.fna&_nc_gid=nkyfMo4sv-8SKeTTFTuVVA&oh=00_Afkg3BeSmYPFtkbh1NruFGnPaUjOY-_8ZfPRttHNXPGCcw&oe=694AB5BA" />
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec" />
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a" />
+      <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" />
+      <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" />
+    </div>
+  </section>
+
+  <!-- DARBA LAIKS -->
+  <section style="padding: 80px 0;">
+    
+    <div class="hours">
+      <h2>Darba laiks</h2>
+        <p>P.-Pk.8:30-18:00</strong></p>
+      <p>S. 10:00-18:00</strong></p>
+      <p>Sv. 10:00-17:00<strong></strong></p>
+    </div>
+  </section>
+
+  <!-- KARTE -->
+  <section class="map-section" style="padding:80px 8%;">
+    <div style="background:#bfd7b9; padding:30px; border-radius:24px;">
+      
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.123456!2d23.72084!3d56.65160!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef250036af8c13%3A0x1515bae4278cbc56!2sP%C3%A2te%20Bakery!5e0!3m2!1slv!2slv!4vXXXXXXXX"
+  width="100%"
+  height="420"
+  style="border:0; border-radius:20px;"
+  allowfullscreen=""
+  loading="lazy"
+></iframe>
+    </div>
+  </section>
+
+  <!-- KONTAKTI -->
+  <section style="padding: 80px 0;">
+    
+    <div class="contact">
+      <h2>Sazināties ar mums</h2>
+        <p>📍 Jelgava, Latvija</p>
+      <p>📞 +371 27 200 002</p>
+      <p>✉️ info@bekereja.lv</p>
+      <p>Nāc ciemos uz siltu kruasānu ❤️</p>
+    </div>
+  </section>
+
+  <footer>© 2025 Bekereja Jelgavā</footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000);
+  </script>
+
+</body>
+</html>
